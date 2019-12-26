@@ -1,0 +1,49 @@
+[color]
+    branch = auto
+    diff = auto
+    interactive = auto
+    status = auto
+    ui = true
+    pager = true
+
+[core]
+    editor = vim
+    pager = less -FRSX
+    whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+    excludesfile = ~/.gitignore
+
+[diff]
+  command = vim
+  tool = vimdiff
+
+[merge]
+    tool = vimdiff
+    prompt = false
+
+[alias]
+    st = status
+    ci = commit
+    co = checkout
+    br = branch
+    diffm = diff origin/master
+    sync = "!sh -c 'git pull --rebase origin master'"
+    syncu = "!sh -c 'git pull --rebase origin upstream'"
+    squash = "!sh -c 'git rebase -i $(git merge-base origin/master HEAD)'"
+    m = merge --no-ff
+    p = push origin HEAD
+    repush = push -f origin HEAD
+    pdff = diff HEAD~1..HEAD
+
+
+pretty = log --graph --pretty=format:'%Cred%h%Creset %C(cyan)%an%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+
+prettyish = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+	d = difftool
+
+[user]
+  email = $EMAIL
+  name = Mohammad Mohtasham
+[push]
+    default = simple
+[difftool]
+    prompt = false
