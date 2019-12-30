@@ -21,13 +21,14 @@
     prompt = false
 
 [alias]
+    hh = "!sh -c 'echo $EMAIL'"
     st = status
     ci = commit
     co = checkout
     br = branch
     diffm = diff origin/master
     sync = "!sh -c 'git pull --rebase origin master'"
-    syncu = "!sh -c 'git pull --rebase origin upstream'"
+    syncu = "!sh -c 'git pull --rebase upstream master'"
     squash = "!sh -c 'git rebase -i $(git merge-base origin/master HEAD)'"
     m = merge --no-ff
     p = push origin HEAD
