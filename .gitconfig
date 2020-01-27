@@ -42,7 +42,7 @@ prettyish = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s 
 	d = difftool
 
 [user]
-  email = $EMAIL
+  email = "!sh -c 'echo $EMAIL'"
   name = Mohammad Mohtasham
 [push]
     default = simple
