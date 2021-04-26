@@ -38,8 +38,8 @@
     prettyish = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
 
 [user]
-    email = "!sh -c 'echo $EMAIL'"
-    name = "!getent passwd `whoami` | cut -d : -f 5"
+    email = "fake_email@gmail.com"
+    name = "Mohammad Mohtasham"
 [push]
     default = simple
 [difftool]
