@@ -7,7 +7,7 @@
     pager = true
 
 [core]
-    editor = vim
+    editor = nvim
     pager = less -FRSX
     whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
     excludesfile = ~/.gitignore
@@ -24,10 +24,12 @@
     st = status
     ci = commit
     co = checkout
-    br = branch
+    br = branch --sort=-committerdate
     diffm = diff origin/master
-    sync = "!sh -c 'git pull --rebase origin master'"
-    syncu = "!sh -c 'git pull --rebase upstream master'"
+    sync = "!sh -c 'git pull --rebase origin main'"
+    syncm = "!sh -c 'git pull --rebase origin master'"
+    syncu = "!sh -c 'git pull --rebase upstream main'"
+    syncum = "!sh -c 'git pull --rebase upstream master'"
     squash = "!sh -c 'git rebase -i $(git merge-base origin/master HEAD)'"
     m = merge --no-ff
     p = push origin HEAD
@@ -40,8 +42,10 @@
 [user]
     email = "fake_email@gmail.com"
     name = "Mohammad Mohtasham"
+
 [push]
     default = simple
+
 [difftool]
     prompt = false
 [mergetool "vimdiff"]
