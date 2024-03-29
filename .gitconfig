@@ -13,11 +13,11 @@
     excludesfile = ~/.gitignore
 
 [diff]
-    command = vim
+    command = nvim
     tool = vimdiff
 
 [merge]
-	tool = vimdiff
+    tool = vimdiff
     prompt = false
 
 [alias]
@@ -26,10 +26,8 @@
     co = checkout
     br = branch --sort=-committerdate
     diffm = diff origin/master
-    sync = "!sh -c 'git pull --rebase origin main'"
-    syncm = "!sh -c 'git pull --rebase origin master'"
-    syncu = "!sh -c 'git pull --rebase upstream main'"
-    syncum = "!sh -c 'git pull --rebase upstream master'"
+    sync = "!sh -c 'default=$(git remote show origin | sed -n \"/HEAD branch/s/.*: //p\") && git pull --rebase origin $default'"
+    syncu = "!sh -c 'default=$(git remote show upstream | sed -n \"/HEAD branch/s/.*: //p\") && git pull --rebase upstream $default'"
     squash = "!sh -c 'git rebase -i $(git merge-base origin/master HEAD)'"
     m = merge --no-ff
     p = push origin HEAD
@@ -49,4 +47,4 @@
 [difftool]
     prompt = false
 [mergetool "vimdiff"]
-	path = nvim
+    path = nvim
