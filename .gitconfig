@@ -37,10 +37,6 @@
     pretty = log --graph --pretty=format:'%Cred%h%Creset %C(cyan)%an%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
     prettyish = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
 
-[user]
-    ; email = "mohm@yelp.com"
-    ; name = "Mohammad Mohtasham"
-
 [push]
     default = simple
 
@@ -48,3 +44,6 @@
     prompt = false
 [mergetool "vimdiff"]
     path = nvim
+	path = nvim
+[credential]
+	helper = /usr/lib/git-core/git-credential-libsecret
